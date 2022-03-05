@@ -1,7 +1,7 @@
-# 1. arkE3proFrog
+# arkE3proFrog
 
-- [1. arkE3proFrog](#1-arke3profrog)
-- [Introduction](#introduction)
+- [arkE3proFrog](#arke3profrog)
+- [1. Introduction](#1-introduction)
 - [2. Hardware](#2-hardware)
   - [2.1. Motion](#21-motion)
     - [X axis](#x-axis)
@@ -13,7 +13,7 @@
 - [3. Firmware](#3-firmware)
 - [4. Slicer Configuration](#4-slicer-configuration)
 
-# Introduction
+# 1. Introduction
 
 Started with stock Creality Ender 3 Pro - Microcenter $99 deal, to learn about the 3D printing.
 
