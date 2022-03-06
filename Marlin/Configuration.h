@@ -145,7 +145,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "arkE3_Frog"
+#define CUSTOM_MACHINE_NAME "Frog"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -604,9 +604,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  27.57
-    #define DEFAULT_Ki   2.70
-    #define DEFAULT_Kd  70.23
+    #define DEFAULT_Kp  15.33 //myFrog HOTEND values - 220C
+    #define DEFAULT_Ki   0.98 // Calculate your values
+    #define DEFAULT_Kd  59.89 // M303 E0 S220 C10
   #endif
 #endif // PIDTEMP
 
@@ -645,9 +645,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 103.90
-  #define DEFAULT_bedKi  20.75
-  #define DEFAULT_bedKd 346.67
+  #define DEFAULT_bedKp 111.35
+  #define DEFAULT_bedKi  21.41
+  #define DEFAULT_bedKd 386.02
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -721,7 +721,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 1000
+#define EXTRUDE_MAXLENGTH 250
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -1381,12 +1381,12 @@
 #define Y_BED_SIZE 235
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -1
+#define Y_MIN_POS -36
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 240
+#define Z_MAX_POS 250
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -1615,7 +1615,7 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
-  //#define PROBE_Y_FIRST
+  #define PROBE_Y_FIRST
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
@@ -1687,7 +1687,7 @@
 #define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
+  #define LEVEL_CORNERS_INSET_LFRB { 40, 40, 40, 40 } // (mm) Left, Front, Right, Back insets
   #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
   #define LEVEL_CORNERS_Z_HOP       5.0   // (mm) Z height of nozzle between leveling points
   #define LEVEL_CENTER_TOO              // Move to the center after the last corner
@@ -1890,7 +1890,7 @@
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z_raise }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS + 1), (Y_MIN_POS + 37), 20 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS + 0), (Y_MIN_POS + 0), 1 }
   #define NOZZLE_PARK_X_ONLY          // X move only is required to park
   #define NOZZLE_PARK_Y_ONLY          // Y move only is required to park
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
